@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul>
+    {% for pessoa in pessoas %}
+      <li>
+        <a href="{% url 'core_pessoa_update' pessoa.id %}">{{ pessoa.nome }}</a>
+      </li>
+    {% endfor%}
+  </ul>
+  <form action="{% url  'core_pessoa_novo' %}" method="POST">
+      {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
+
+      {{ form.as_p }} <!--as_p faz dar um paragrafo entre cada campo-->
+
+      <button type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>
