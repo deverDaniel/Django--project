@@ -1,23 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-  <ul>
-    {% for mensalista in mensalistas %}
-      <li>
-        <a href="{% url 'core_mensalista_update' mensalista.id %}">{{ mensalista.veiculo }}</a>
-      </li>
-    {% endfor%}
-  </ul>
-  <form action="{% url  'core_mensalista_novo' %}" method="POST">
-      {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
+{% extends 'base.html'%}
+{% load bootstrap %}
 
-      {{ form.as_p }} <!--as_p faz dar um paragrafo entre cada campo-->
+{% block main %}
+<div class="row">
+  <div class="col-12">
+     <h1> Lista de Mensalistas</h1>
+     <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Veiculo</th>
+              <th scope="col">Inicio</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            {% for mensalista in mensalistas %}
+            <tr>
+              <th scope="row" href=""> {{ mensalista.id }}</th>
+              <td>{{ mensalista.veiculo }}</td>
+              <td>{{ mensalista.inicio}}</td>
+              <td>{{ mensalista.valor_mes}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </ul>
+      <form action="{% url  'core_mensalista_novo' %}" method="POST">
+          {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
 
-      <button type="submit">Salvar</button>
-  </form>
-</body>
-</html>
+          {{ form|bootstrap }} <!--as_p faz dar um paragrafo entre cada campo-->
+
+          <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+  </div>
+</div>
+
+{% endblock %}

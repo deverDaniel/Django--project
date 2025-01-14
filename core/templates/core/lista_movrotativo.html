@@ -1,23 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
- <ul>
-    {% for mov in movrotativos %}
-     <li>
-        <a href="{% url 'core_movrotativo_update' mov.id %}"> {{ mov.entrada }} -- {{mov.veiculo.placa}}</a>
-     </li>
-    {% endfor%}
-  </ul>
-  <form action="{% url  'core_movrotativo_novo' %}" method="POST">
-      {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
+{% extends 'base.html'%}
+{% load bootstrap %}
 
-      {{ form.as_p }} <!--as_p faz dar um paragrafo entre cada campo-->
+{% block main %}
+<div class="row">
+  <div class="col-12">
+    <h1>Lista de Rotativos</h1>
 
-      <button type="submit">Cadastrar</button>
-  </form>
-</body>
-</html>
+    <table class="table">
+         <thead>
+           <tr>
+             <th scope="col">ID</th>
+             <th scope="col">Entrada</th>
+             <th scope="col">Saida</th>
+             <th scope="col">Pago</th>
+           </tr>
+         </thead>
+         <tbody class="table-group-divider">
+           {% for movrotativo in movrotativos %}
+           <tr>
+             <th scope="row" href=""> {{ movrotativo.id }}</th>
+             <td>{{ movrotativo.entrada }}</td>
+             <td>{{ movrotativo.saida}}</td>
+             <td>{{ movrotativo.pago}}</td>
+           </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+      <form action="{% url  'core_movrotativo_novo' %}" method="POST">
+          {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
+
+          {{ form|bootstrap }} <!--as_p faz dar um paragrafo entre cada campo-->
+
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <ul>
-    {% for veiculo in veiculos %}
-        <li>
-            <a href="{% url 'core_veiculo_update' veiculo.id %}">{{ veiculo.marca }}</a>
-        </li>
-    {% endfor%}
-  </ul>
-  <form action="{% url  'core_veiculo_novo' %}" method="POST">
-      {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
+{% extends 'base.html'%}
+{% load bootstrap %}
 
-      {{ form.as_p }} <!--as_p faz dar um paragrafo entre cada campo-->
+{% block main %}
+<div class="row">
+    <div class="col">
+        <h1>Lista de Veiculos</h1>
+         <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Placa</th>
+                  <th scope="col">Cor</th>
+                  <th scope="col">Proprietario</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider">
+                {% for veiculo in veiculos %}
+                <tr>
+                  <th scope="row" href=""> {{ veiculo.id }}</th>
+                  <td>{{ veiculo.marca }}</td>
+                  <td>{{ veiculo.placa}}</td>
+                  <td>{{ veiculo.cor}}</td>
+                  <td>{{ veiculo.proprietario}}</td>
+                </tr>
+                {% endfor %}
+          </tbody>
+        </table>
+      <form action="{% url  'core_veiculo_novo' %}" method="POST">
+          {% csrf_token %} <!-- defende de ataques do tipo csrf_token-->
 
-      <button type="submit">Cadastrar</button>
-  </form>
-</body>
-</html>
+          {{ form|bootstrap}} <!--as_p faz dar um paragrafo entre cada campo-->
+
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

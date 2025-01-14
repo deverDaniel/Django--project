@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    {{mensagem}}
-</body>
-</html>
+{% extends 'base.html'%}
+
+{% block main %}
+<div class="row">
+    <div class="col-12">
+        <h1> sejá bem vindo</h1>
+        <a href="/admin"> Click aqui para entrar</a>
+    </div>
+</div>
+
+{% endblock %}
