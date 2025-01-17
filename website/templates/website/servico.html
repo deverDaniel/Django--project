@@ -1,0 +1,55 @@
+{% extends 'website/base.html'%}
+{% load static%}
+{% block menu%}
+<div class="row">
+  <div class="col-12">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link active" href="{% url 'website_servico'%}">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sobre">Sobre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/plano">Plano</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'website_contato'%}">Contatos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'core_home'%}">Sistema</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block main %}
+<div class="row row-space">
+  <div class="col-12">
+    Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis.
+    Atirei o pau no gatis, per gatis num morreus. Pellentesque nec nulla ligula.
+    Donec gravida turpis a vulputate ultricies. Vehicula non. Ut sed ex eros.
+    Vivamus sit amet nibh non tellus tristique interdum. <br>
+
+    Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Interagi no mé, cursus quis, vehicula ac nisi.
+    Atirei o pau no gatis, per gatis num morreus. Quem num gosta di mim que vai caçá sua turmis!
+    <br>
+    Pra lá, depois divoltis porris, paradis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.
+    Nulla id gravida magna, ut semper sapien. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <img src="{% static 'img/logo.png'%}">
+  </div>
+  <div class="col-6">
+    <img src="{% static 'img/logo.png'%}">
+  </div>
+</div>
+
+{% endblock %}

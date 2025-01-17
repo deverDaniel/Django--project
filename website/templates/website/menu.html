@@ -2,22 +2,22 @@
   <div class="col-12">
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Serviços</a>
+        <a class="nav-link" href="{% url 'website_servico'%}">Serviços</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sobre</a>
+        <a class="nav-link" href="/sobre">Sobre</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " aria-disabled="true">Plano</a>
+        <a class="nav-link " href="/plano">Plano</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " aria-disabled="true">Contatos</a>
+        <a class="nav-link " href="{% url 'website_contato'%}">Contatos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " aria-disabled="true">Sistema</a>
+        <a class="nav-link " href="{% url 'core_home'%}">Sistema</a>
       </li>
     </ul>
   </div>

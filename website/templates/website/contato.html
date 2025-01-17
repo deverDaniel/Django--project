@@ -1,0 +1,71 @@
+{% extends 'website/base.html'%}
+{% load static%}
+{% block menu%}
+<div class="row">
+  <div class="col-12">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'website_servico'%}">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sobre">Sobre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/plano">Plano</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'website_contato'%}">Contatos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'core_home'%}">Sistema</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block main %}
+<div class="row row-space">
+    <div class="col-6">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Nome</label>
+          <input type="text" class="form-control" placeholder="Escreva o nome completo">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Email</label>
+          <input type="text" class="form-control" placeholder="Escreva seu email">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Telefone</label>
+          <input type="text" class="form-control" placeholder="Escreva seu Telefone">
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Deixe sua mensagem aqui" id="floatingTextarea"></textarea>
+          <label for="floatingTextarea">Mensagem</label>
+        </div>
+        <button type="button" class="btn btn-primary">Enviar</button>
+    </div>
+    <div class="col-6">
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.
+            Viva Forevis aptent taciti sociosqu ad litora torquent. Si u mundo tá muito paradis?
+            Toma um mé que o mundo vai girarzis! Nulla id gravida magna, ut semper sapien.
+        </p>
+        <div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57610.
+				80958090337!2d-49.25477975136725!3d-25.515863399999997!2m3!1f0!2f0!3f0!3m2!
+				1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf0eba459b799%3A0x178b8af9c6b200ec!2sSENAI
+				%20S%C3%83O%20JOS%C3%89%20DOS%20PINHAIS%20-%20UNIDADE%20AFONSO%20PENA!5e0!3m2!
+				1spt-BR!2sbr!4v1709235714265!5m2!1spt-BR!2sbr" width="90%" height="600px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+    </div>
+</div>
+
+
+
+
+{% endblock%}

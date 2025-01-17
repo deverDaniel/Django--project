@@ -1,0 +1,62 @@
+{% extends 'website/base.html'%}
+{% load static%}
+{% block menu%}
+<div class="row">
+  <div class="col-12">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'website_servico'%}">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/sobre">Sobre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/plano">Plano</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'website_contato'%}">Contatos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'core_home'%}">Sistema</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block main %}
+<div class="row row-space">
+  <div class="col-12">
+    aba sobre
+    Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis.
+    Atirei o pau no gatis, per gatis num morreus. Pellentesque nec nulla ligula.
+    Donec gravida turpis a vulputate ultricies. Vehicula non. Ut sed ex eros.
+    Vivamus sit amet nibh non tellus tristique interdum. <br>
+
+    Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Interagi no mé, cursus quis, vehicula ac nisi.
+    Atirei o pau no gatis, per gatis num morreus. Quem num gosta di mim que vai caçá sua turmis!
+    <br>
+    Pra lá, depois divoltis porris, paradis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.
+    Nulla id gravida magna, ut semper sapien. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.
+  </div>
+</div>
+<div class="row row-space">
+  <div class="col-6">
+    <img src="{% static 'img/logo.png'%}">
+  </div>
+  <div class="col-6">
+    <h2 style="text-align: center;"> Nossa Historia</h2>
+    <p>
+      Mussum Ipsum, cacilds vidis litro abertis. Sapien in monti palavris qui num significa nadis i pareci latim. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Diuretics paradis num copo é motivis de denguis.
+
+Quem num gosta di mim que vai caçá sua turmis! Ô gente finis, pode baixar uma ampolis que hoje é sexta-feris! Leite de capivaris, leite de mula manquis sem cabeça. Copo furadis é disculpa de bebadis, arcu quam euismod magna.
+
+Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Aenean aliquam molestie leo, vitae iaculis nisl. Ô gente finis, pode baixar uma ampolis que hoje é sexta-feris!
+    </p>
+  </div>
+</div>
+{% endblock%}
