@@ -1,2 +1,2 @@
 # Django--project
-projeto usasndo django
+projeto usando django
