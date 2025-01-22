@@ -1,13 +1,7 @@
 # Django--project
 projeto usando django
 
+Projeto de Estacionamento
 
-What          | Why           | Where       | When      | Who        | How        | How Much      
-------------------------------------------------------------------------------------------------
-              |               |             |           |            |            |              
-              |               |             |           |            |            |              
-              |               |             |           |            |            |              
+![image](https://github.com/user-attachments/assets/0db3f3ca-7255-4610-88b7-42997440e07f)
 
-
-
-![logo](https://github.com/user-attachments/assets/fabea771-a4d0-4fe3-b871-bec203d0454a)
