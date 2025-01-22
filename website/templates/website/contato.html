@@ -1,7 +1,7 @@
 {% extends 'website/base.html'%}
 {% load static%}
 {% block menu%}
-<div class="row">
+<div class="row row-space">
   <div class="col-12">
     <ul class="nav nav-pills nav-fill">
       <li class="nav-item">
@@ -29,25 +29,29 @@
 {% endblock %}
 
 {% block main %}
+
 <div class="row row-space">
     <div class="col-6">
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">Nome</label>
-          <input type="text" class="form-control" placeholder="Escreva o nome completo">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Email</label>
-          <input type="text" class="form-control" placeholder="Escreva seu email">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Telefone</label>
-          <input type="text" class="form-control" placeholder="Escreva seu Telefone">
-        </div>
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Deixe sua mensagem aqui" id="floatingTextarea"></textarea>
-          <label for="floatingTextarea">Mensagem</label>
-        </div>
-        <button type="button" class="btn btn-primary">Enviar</button>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Nome</label>
+              <input type="text" class="form-control" placeholder="Escreva o nome completo" name="nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Email</label>
+              <input type="text" class="form-control" placeholder="Escreva seu email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Telefone</label>
+              <input type="text" class="form-control" placeholder="Escreva seu Telefone" name="telefone" required>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Deixe sua mensagem aqui" id="floatingTextarea" name="mensagem" required></textarea>
+              <label for="floatingTextarea">Mensagem</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
     </div>
     <div class="col-6">
         <p>
@@ -66,6 +70,10 @@
 </div>
 
 
-
+{% if mensagem %}
+    <script>
+        alert("{{ mensagem }}");
+    </script>
+{% endif%}
 
 {% endblock%}

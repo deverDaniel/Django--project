@@ -3,7 +3,7 @@ from .views import home,\
     lista_pessoas, lista_veiculos, lista_movrotativos, lista_mensalista, lista_movmensalista,\
     pessoa_novo, veiculo_novo, movrotativo_novo, mensalista_novo, movmensalista_novo,\
     pessoa_update, veiculo_update ,movrotativo_update, mensalista_update, movmensalista_update, \
-    pessoa_delete, veiculo_delete, movrotativo_delete, mensalista_delete, movmensalista_delete
+    pessoa_delete, veiculo_delete, movrotativo_delete, mensalista_delete, movmensalista_delete, Pdf, ExportarParaCSV
 urlpatterns = [
     path('', home, name='core_home'),
     path('pessoas', lista_pessoas, name= "core_lista_pessoa"), ##name funciona como um id para o redirect
@@ -34,4 +34,8 @@ urlpatterns = [
     path('mov-mensalista-novo', movmensalista_novo, name= "core_movmensalista_novo"),
     path('mov-mensalista-update/<int:id>', movmensalista_update, name= "core_movmensalista_update"),
     path('movmensalista-delete/<int:id>', movmensalista_delete, name= "core_movmensalista_delete"),
+
+    path('relatorio', Pdf.as_view(), name= "relatorio_pdf"),
+    path('relatorio-csv', ExportarParaCSV.as_view(), name='relatorio_csv')
+
 ]
